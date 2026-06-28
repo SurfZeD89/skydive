@@ -13,24 +13,26 @@ function draw() {
   info.textContent = `מספר ${jump} | ${names[stage]}`;
 }
 
-async function cp(text) {
+async function copyText(text) {
   try {
     await navigator.clipboard.writeText(text);
-  } catch (e) {}
+  } catch (e) {
+    alert("לא הצלחתי להעתיק אוטומטית. תעתיק ידנית: " + text);
+  }
 }
 
-function openWhatsApp(text) {
-  window.location.href = "whatsapp://send?text=" + encodeURIComponent(text);
+function openWhatsApp() {
+  window.location.href = "whatsapp://";
 }
 
 send.onclick = async () => {
   const text = `${names[stage]} ${jump}`;
 
-  await cp(text);
+  await copyText(text);
 
   if (navigator.vibrate) navigator.vibrate(30);
 
-  openWhatsApp(text);
+  openWhatsApp();
 
   if (stage < 2) {
     stage++;
@@ -63,8 +65,8 @@ reset.onclick = async () => {
     save();
     draw();
 
-    await cp("קרקע");
-    openWhatsApp("קרקע");
+    await copyText("קרקע");
+    openWhatsApp();
   }
 };
 
