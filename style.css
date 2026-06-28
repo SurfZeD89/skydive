@@ -1,0 +1,5 @@
+body{margin:0;background:#111;color:#fff;font-family:Arial;display:flex;justify-content:center}
+.box{max-width:420px;width:100%;padding:20px}
+button{width:100%;padding:18px;border:0;border-radius:12px;margin:10px 0;font-size:22px}
+#send{background:#25D366;color:#fff}.row{display:flex;gap:10px}.row button{font-size:18px}
+#back{background:#555}#reset{background:#c0392b}#current{font-size:32px;text-align:center;margin:25px 0}#info{text-align:center;color:#aaa}
